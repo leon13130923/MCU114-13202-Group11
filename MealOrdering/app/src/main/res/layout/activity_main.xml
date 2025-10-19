@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="FestFood Order Wizard"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnChMainMeal"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Choose Main Meal"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <Button
+        android:id="@+id/btnChSideDishes"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Choose Side Dishes"
+        app:layout_constraintStart_toStartOf="@+id/btnChMainMeal"
+        app:layout_constraintTop_toBottomOf="@+id/btnChMainMeal" />
+
+    <Button
+        android:id="@+id/btnChDrink"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Choose Drink"
+        app:layout_constraintStart_toStartOf="@+id/btnChSideDishes"
+        app:layout_constraintTop_toBottomOf="@+id/btnChSideDishes" />
+
+    <TextView
+        android:id="@+id/tvCuSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Current Selection:"
+        app:layout_constraintStart_toStartOf="@+id/btnChDrink"
+        app:layout_constraintTop_toBottomOf="@+id/btnChDrink" />
+
+    <TextView
+        android:id="@+id/tvMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main:一"
+        app:layout_constraintStart_toStartOf="@+id/tvCuSelection"
+        app:layout_constraintTop_toBottomOf="@+id/tvCuSelection" />
+
+    <TextView
+        android:id="@+id/tvSide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sides:一"
+        app:layout_constraintStart_toStartOf="@+id/tvMain"
+        app:layout_constraintTop_toBottomOf="@+id/tvMain" />
+
+    <TextView
+        android:id="@+id/tvDrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drink:一"
+        app:layout_constraintStart_toStartOf="@+id/tvSide"
+        app:layout_constraintTop_toBottomOf="@+id/tvSide" />
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Order"
+        app:layout_constraintStart_toStartOf="@+id/tvDrink"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrink" />
+
+    <TextView
+        android:id="@+id/tvSubmittedOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/btnOrder"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrder" />
+</androidx.constraintlayout.widget.ConstraintLayout>

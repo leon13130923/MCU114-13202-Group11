@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMealActivity">
+
+    <TextView
+        android:id="@+id/tvMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"
+        android:text="Select Main Meal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvMainTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainTitle"
+        android:layout_marginTop="20dp" >
+
+        <RadioButton
+            android:id="@+id/radioBtnBurger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Burger" />
+
+        <RadioButton
+            android:id="@+id/radioBtnFriedChicken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fried Chicken" />
+
+        <RadioButton
+            android:id="@+id/radioButChickenNuggets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chicken Nuggets" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnDoneM"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Done"
+        app:layout_constraintStart_toStartOf="@+id/radioGroupM"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
