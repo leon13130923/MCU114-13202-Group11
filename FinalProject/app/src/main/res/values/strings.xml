@@ -2,4 +2,31 @@
     <string name="app_name">FinalProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="weeks">
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+
+    </string-array>
+
+    <string-array name="periods">
+        <item>第1節</item>
+        <item>第2節</item>
+        <item>第3節</item>
+        <item>第4節</item>
+        <item>第5節</item>
+        <item>第6節</item>
+        <item>第7節</item>
+        <item>第8節</item>
+        <item>第9節</item>
+        <item>第10節</item>
+        <item>第11節</item>
+        <item>第12節</item>
+        <item>第13節</item>
+        <item>第14節</item>
+    </string-array>
+
 </resources>

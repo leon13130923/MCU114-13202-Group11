@@ -1,0 +1,55 @@
+package com.example.finalproject
+
+import android.os.Bundle
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+
+class FriendsActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_friends)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+        val rbFriPrint = findViewById<RadioButton>(R.id.rbFriPrint)
+        val rbFriAsk = findViewById<RadioButton>(R.id.rbFriAsk)
+        val rbFriSearch = findViewById<RadioButton>(R.id.rbFriSearch)
+        val radioGroup = findViewById<RadioGroup>(R.id.radioFriendsGroup)
+
+        // Activity 第一次啟動 → 預設載入新增課程畫面
+        if (savedInstanceState == null) {
+            replaceFragment(FriendPrintFragment())
+        }
+
+        // 監聽 RadioGroup 切換 Fragment
+        radioGroup.setOnCheckedChangeListener { _, checkedId ->
+
+            when (checkedId) {
+                R.id.rbFriPrint -> {
+                    replaceFragment(FriendPrintFragment())
+                }
+                R.id.rbFriAsk -> {
+                    replaceFragment(FriendsAskFragment())
+                }
+                R.id.rbFriSearch -> {
+                    replaceFragment(FriendSearchFragment())
+                }
+            }
+        }
+    }
+
+    // Fragment 切換方法
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.FriendsFragmentContainer, fragment)
+            .commit()
+    }
+}
