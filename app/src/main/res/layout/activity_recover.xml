@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="請輸入您註冊時使用的電子郵件地址，以找回帳號。"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="電子郵件">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_recover_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_perform_recover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="確認找回"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>
