@@ -21,10 +21,10 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Class"
+            android:name=".FriendsActivity"
             android:exported="false" />
         <activity
-            android:name=".FriendsActivity"
+            android:name=".Class"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
