@@ -12,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddActivity"
             android:exported="false" />
         <activity
             android:name=".SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".TestActivity"
             android:exported="false" />
         <activity
             android:name=".FriendsActivity"

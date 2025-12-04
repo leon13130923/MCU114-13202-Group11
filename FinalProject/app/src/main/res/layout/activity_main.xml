@@ -5,93 +5,111 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+
     tools:context=".MainActivity">
 
-    <!-- App 名稱 -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="課程規劃 App"
-        android:textSize="26sp"
-        android:textStyle="bold"
+    <!-- 頂部標題區域 -->
+    <View
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/purple_200"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- RadioGroup（二選一） -->
-    <RadioGroup
-        android:id="@+id/rgAuthSwitch"
+    <!-- App 標題 -->
+    <TextView
+        android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:text="課程規劃App"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Tab 切換 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/white"
+        app:tabIndicatorColor="@color/purple_500"
+        app:tabSelectedTextColor="@color/purple_500"
+        app:tabTextColor="@android:color/darker_gray"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <RadioButton
-            android:id="@+id/rbLogin"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="登入" />
 
-        <RadioButton
-            android:id="@+id/rbRegister"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="註冊" />
-    </RadioGroup>
 
-    <!-- Fragment 內容區 -->
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Fragment 容器 -->
     <FrameLayout
-        android:id="@+id/authFragmentContainer"
+        android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/rgAuthSwitch"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-    <!--    <TextView-->
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!--    &lt;!&ndash; App 名稱 &ndash;&gt;-->
+<!--    <TextView-->
 <!--        android:id="@+id/tvTitle"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:padding="16dp"-->
 <!--        android:text="課程規劃 App"-->
 <!--        android:textSize="26sp"-->
 <!--        android:textStyle="bold"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
+<!--    &lt;!&ndash; RadioGroup（二選一） &ndash;&gt;-->
 <!--    <RadioGroup-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="100dp"-->
+<!--        android:id="@+id/rgAuthSwitch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
 <!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvTitle"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tvTitle">-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
 
 <!--        <RadioButton-->
-<!--            android:id="@+id/radioButton4"-->
+<!--            android:id="@+id/rbLogin"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-
-<!--            android:text="註冊" />-->
-
-<!--        <RadioButton-->
-<!--            android:id="@+id/radioButton5"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
 <!--            android:text="登入" />-->
 
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbRegister"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="註冊" />-->
 <!--    </RadioGroup>-->
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

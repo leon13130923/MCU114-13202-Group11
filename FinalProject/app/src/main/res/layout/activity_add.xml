@@ -6,9 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddActivity"
-    android:padding="20dp">
+    >
+
+
+    <!-- 頂部標題區域 -->
 
     <!-- 大標題 -->
+
+    <View
+        android:id="@+id/topAddBar"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/purple_200"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+
+        android:background="@drawable/image_button_simaple"
+
+        android:contentDescription="@string/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/outline_arrow_left_alt_24" />
+
     <TextView
         android:id="@+id/tvAddTitle"
         android:layout_width="wrap_content"
@@ -16,45 +45,82 @@
         android:text="新增"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintBottom_toBottomOf="@id/topAddBar"
+        app:layout_constraintTop_toTopOf="@+id/topAddBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:paddingBottom="16dp"/>
 
-    <!-- RadioGroup：新增課程 / 新增任務 -->
-    <RadioGroup
-        android:id="@+id/radioAddGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/tvAddTitle"
+    <!-- Tab 切換 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabAddLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/white"
+        app:tabIndicatorColor="@color/purple_500"
+        app:tabSelectedTextColor="@color/purple_500"
+        app:tabTextColor="@android:color/darker_gray"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:layout_constraintTop_toBottomOf="@id/topAddBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <RadioButton
-            android:id="@+id/rbAddCourse"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="新增課程"
-            android:checked="true" />
+            android:text="新增課程" />
 
-        <RadioButton
-            android:id="@+id/rbAddTask"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="新增任務" />
-    </RadioGroup>
+
+    </com.google.android.material.tabs.TabLayout>
+
 
     <!-- Fragment 顯示區域 -->
     <FrameLayout
         android:id="@+id/addFragmentContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/radioAddGroup"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="410dp"
+        android:layout_height="570dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabAddLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--  android:background="?attr/selectableItemBackgroundBorderless"  -->
+
+
+
+    <!--    &lt;!&ndash; RadioGroup：新增課程 / 新增任務 &ndash;&gt;-->
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/radioAddGroup"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvAddTitle"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/rbAddCourse"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="新增課程"-->
+    <!--            android:checked="true" />-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/rbAddTask"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="新增任務" />-->
+    <!--    </RadioGroup>-->

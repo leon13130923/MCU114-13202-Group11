@@ -1,47 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"  tools:context=".MainActivity">
+    tools:context=".Class">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <!-- ====== AppBar (Toolbar 需要放在這裡) ====== -->
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#673AB7"  app:title="課表分享"
-        app:titleTextColor="@android:color/white"
-        app:navigationIcon="@drawable/baseline_school_24"  />
-    <ScrollView
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="課表分享"
+            app:navigationIcon="@drawable/baseline_school_24"
+            app:menu="@menu/timetable_menu"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ====== Fragment Container ====== -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/main">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#DCDCDC">
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="1200dp"
-                    android:layout_height="2000dp"
-                    android:background="#FFFFFFFF"
-                    android:padding="50dp"
-                    android:text="確認介面長寬 /n 1111111111111111"
-                    android:textSize="24sp"
-                    android:gravity="top|start" />
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_height="match_parent">-->
 
-            </LinearLayout>
 
-        </HorizontalScrollView>
+<!--    &lt;!&ndash; Fragment Container &ndash;&gt;-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        android:theme="?attr/actionBarTheme"-->
+<!--        app:title="課表分享"-->
+<!--        app:navigationIcon="@drawable/baseline_school_24"-->
+<!--        app:menu="@menu/timetable_menu"/>-->
 
-    </ScrollView>
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="?attr/actionBarSize"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
 
-</LinearLayout>
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"  tools:context=".MainActivity">-->
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/my_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="#673AB7"  app:title="課表分享"-->
+<!--        app:titleTextColor="@android:color/white"-->
+<!--        app:navigationIcon="@drawable/baseline_school_24"  />-->
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/main">-->
+
+<!--        <HorizontalScrollView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="#DCDCDC">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="1200dp"-->
+<!--                    android:layout_height="2000dp"-->
+<!--                    android:background="#FFFFFFFF"-->
+<!--                    android:padding="50dp"-->
+<!--                    android:text="確認介面長寬 /n 1111111111111111"-->
+<!--                    android:textSize="24sp"-->
+<!--                    android:gravity="top|start" />-->
+
+<!--            </LinearLayout>-->
+
+<!--        </HorizontalScrollView>-->
+
+<!--    </ScrollView>-->
+
+<!--</LinearLayout>-->

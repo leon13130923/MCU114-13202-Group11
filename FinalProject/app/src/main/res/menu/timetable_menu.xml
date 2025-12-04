@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_add_course"
+        android:title="新增課程"
+        android:icon="@drawable/outline_add_box_24"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_friends"
+        android:title="好友"
+        android:icon="@drawable/outline_boy_24"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:title="設定"
+        android:icon="@drawable/outline_build_24"
+        app:showAsAction="ifRoom" />
+</menu>
